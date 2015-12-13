@@ -15,7 +15,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta VB<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li class="active"><a href="usuarioedit.php">Editar perfil</a></li>
-							<li class="active"><a href="index.php">Ver actividades</a></li>
+							<li class="active"><a href="actividades.php">Ver actividades</a></li>
 						</ul>
 					</li>
 					<li><a class="btn" href="signin.php"> Inicia sesión / Registro </a></li>
@@ -40,7 +40,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta VB<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li class="active"><a href="usuarioedit.php">Editar perfil</a></li>
-							<li class="active"><a href="index.php">Ver actividades</a></li>
+							<li class="active"><a href="actividades.php">Ver actividades</a></li>
 						</ul>
 					</li>
 					<li><a class="btn" href="signin.php"> Inicia sesión / Registro </a></li>
