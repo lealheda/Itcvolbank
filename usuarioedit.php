@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <?php include("head.php"); 
-	
+require 'modelos/Formulario.php';
 ?>
 
 <body>
-
-<?php include("header.php") ?>
+<?php include("header.php"); ?>
 
 	<header id="head" class="secondary"></header>
-
-
 	<!-- container -->
 	<div class="container">
-	
-
 		<ol class="breadcrumb">
 			<li><a href="index.php">Inicio</a></li>
 			<li><a href="index.php">Usuario</a></li>
 			<li class="active">Editar usuario</li>
 		</ol>
-
-
 		<div class="row">
 			
 			<!-- Article main content -->
@@ -30,7 +22,12 @@
 				<header class="page-header">
 					<h1 class="page-title">Editar perfil</h1>
 				</header>
+
+				<?php
 				
+					$param = new Formulario();
+					$result = $param->getVoluntario();
+				?>
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
@@ -41,79 +38,79 @@
 							<form>
 								<div class="top-margin">
 									<label>Nombre <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->nombre;?>">
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Apellido paterno <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->apellido_paterno;?>">
 								</div>
 								<div class="col-sm-6">
 									<label>Apellido Materno <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->apellido_materno;?>">
 								</div>
 								</div>
 								<div class="top-margin">
 									<label>Edad <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->edad;?>">
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Calle <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->calle;?>">
 								</div>
 								<div class="col-sm-6">
 									<label>Número <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->numero;?>">
 								</div>
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Colonia <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->colonia;?>">
 								</div>
 								<div class="col-sm-6">
 									<label>Código postal <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->codigo_postal;?>">
 								</div>
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Ciudad <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->ciudad;?>">
 								</div>
 								<div class="col-sm-6">
 									<label>Estado <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->estado;?>">
 								</div>
 								</div>
 								<div class="top-margin">
 									<label>Pais <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->pais;?>">
 								</div>
 								<div class="top-margin">
 									<label>Telefono <span class="text-danger"></span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->telefono;?>">
 								</div>
 								<div class="top-margin">
 									<label>Correo electronico <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->correo_electronico;?>">
 								</div>
 								<div class="row top-margin">
 									<div class="col-sm-6">
 										<label>Contraseña <span class="text-danger">*</span></label>
-										<input type="password" class="form-control">
+										<input type="password" class="form-control" value="<?php echo $result->contrasena;?>">
 									</div>
 									<div class="col-sm-6">
 										<label>Confirmar contraseña <span class="text-danger">*</span></label>
-										<input type="password" class="form-control">
+										<input type="password" class="form-control" value="<?php echo $result->contrasena;?>">
 									</div>
 								</div>
 								<div class="top-margin">
 									<label>Habilidad <span class="text-danger">*</span></label>
 									<select class="form-control">
 									<?php
-											require 'modelos/Formulario.php';
+											
 											$param = new Formulario();
 											$query = $param->getHabilidad();
 											while ($obj = $query->fetch_object()) {

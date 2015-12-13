@@ -29,7 +29,8 @@ class Login {
         $_SESSION['logueado'] = true;
         $_SESSION['usuario'] = array(
             'usuario' => $usuario->usuario,
-            'tipo_usuario' => $usuario->tipo_usuario
+            'tipo_usuario' => $usuario->tipo_usuario,
+            'id' => $usuario->id
             );
     }
 }
