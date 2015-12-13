@@ -11,7 +11,6 @@
 		</div>
 	</header>
 	<!-- /Header -->
-
 	<!-- Intro -->
 	<div class="container text-center">
 		<br> <br>
@@ -25,10 +24,10 @@
 			<table id="actividades" class="table table-hover" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
+                <th># actividad</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Nombre usuario</th>
                 <th>Start date</th>
                 <th>Salary</th>
             </tr>

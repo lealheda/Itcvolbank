@@ -15,11 +15,13 @@
 	<!-- container -->
 	<div class="container">
 	
+
 		<ol class="breadcrumb">
 			<li><a href="index.php">Inicio</a></li>
 			<li><a href="index.php">Usuario</a></li>
 			<li class="active">Editar usuario</li>
 		</ol>
+
 
 		<div class="row">
 			
@@ -35,11 +37,7 @@
 							<h3 class="thin text-center">editar perfil de cuenta</h3>
 							<p class="text-center text-muted">Favor de llenar los datos </p> </p>
 							<hr>
-								<?php
-		require 'modelos/Formulario.php';
-		$param = new Formulario();
-		$param->get();
-	?>
+								
 							<form>
 								<div class="top-margin">
 									<label>Nombre <span class="text-danger">*</span></label>
@@ -114,7 +112,14 @@
 								<div class="top-margin">
 									<label>Habilidad <span class="text-danger">*</span></label>
 									<select class="form-control">
-									<option value="A">A</option>
+									<?php
+											require 'modelos/Formulario.php';
+											$param = new Formulario();
+											$query = $param->get();
+											while ($obj = $query->fetch_object()) {
+												echo '<option value="'.$obj->id.'">'.$obj->nombre.'</option>';
+										        }
+									?>
 								</select>
 								</div>
 							    <div class="top-margin">
