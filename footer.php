@@ -15,7 +15,7 @@
 					</div>
 
 					<div class="col-md-3 widget">
-						<h3 class="widget-title">Follow me</h3>
+						<h3 class="widget-title">Siguenos en las diferentes redes sociales</h3>
 						<div class="widget-body">
 							<p class="follow-me-icons">
 								<a href=""><i class="fa fa-twitter fa-2"></i></a>
@@ -27,10 +27,19 @@
 					</div>
 
 					<div class="col-md-6 widget">
-						<h3 class="widget-title">Text widget</h3>
+						<h3 class="widget-title">Frases</h3>
 						<div class="widget-body">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, dolores, quibusdam architecto voluptatem amet fugiat nesciunt placeat provident cumque accusamus itaque voluptate modi quidem dolore optio velit hic iusto vero praesentium repellat commodi ad id expedita cupiditate repellendus possimus unde?</p>
-							<p>Eius consequatur nihil quibusdam! Laborum, rerum, quis, inventore ipsa autem repellat provident assumenda labore soluta minima alias temporibus facere distinctio quas adipisci nam sunt explicabo officia tenetur at ea quos doloribus dolorum voluptate reprehenderit architecto sint libero illo et hic.</p>
+							<p>Aunque haya religiones diferentes, debido a distintas culturas, lo importante es que todas coincidan en su objetivo principal: ser buena persona y ayudar a los demás.
+								Dalai Lama
+							</p>
+							<p>Ayudar al que lo necesita no sólo es parte del deber, sino de la felicidad.
+								José Martí (1853-1895) Político y escritor cubano.
+							</p>
+							<p>
+								Uno de los secretos profundos de la vida es que lo único que merece la pena hacer es lo que hacemos por los demás.
+								Lewis Carroll (1832-1898) Matemático y escritor británico.
+							</p>
+							
 						</div>
 					</div>
 
@@ -45,11 +54,10 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="simplenav">
-								<a href="#">Home</a> | 
-								<a href="about.html">About</a> |
-								<a href="sidebar-right.html">Sidebar</a> |
-								<a href="contact.html">Contact</a> |
-								<b><a href="signup.html">Sign up</a></b>
+								<a href="index.php">Inicio</a> | 
+								<a href="about.php">Acerca de</a> |
+								<a href="contact.php">Contacto</a> |
+								<b><a href="signup.php">Registrate</a></b>
 							</p>
 						</div>
 					</div>
@@ -57,7 +65,7 @@
 					<div class="col-md-6 widget">
 						<div class="widget-body">
 							<p class="text-right">
-								Copyright &copy; 2014, Your name. Designed by <a href="http://gettemplate.com/" rel="designer">gettemplate</a> 
+								Copyright &copy; 2015, ITCVolBank. Diseñado por <a href="index.php" rel="designer">Leal Hernández Daniel</a> 
 							</p>
 						</div>
 					</div>
