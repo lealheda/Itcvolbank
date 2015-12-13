@@ -33,11 +33,55 @@
 
 							<form>
 								<div class="top-margin">
-									<label>Nombre</label>
+									<label>Nombre <span class="text-danger">*</span></label>
 									<input type="text" class="form-control">
 								</div>
+								<div class="row top-margin">
+								<div class="col-sm-6">
+									<label>Apellido paterno <span class="text-danger">*</span></label>
+									<input type="text" class="form-control">
+								</div>
+								<div class="col-sm-6">
+									<label>Apellido Materno <span class="text-danger">*</span></label>
+									<input type="text" class="form-control">
+								</div>
+								</div>
 								<div class="top-margin">
-									<label>Apellidos</label>
+									<label>Edad <span class="text-danger">*</span></label>
+									<input type="text" class="form-control">
+								</div>
+								<div class="row top-margin">
+								<div class="col-sm-6">
+									<label>Calle <span class="text-danger">*</span></label>
+									<input type="text" class="form-control">
+								</div>
+								<div class="col-sm-6">
+									<label>Número <span class="text-danger">*</span></label>
+									<input type="text" class="form-control">
+								</div>
+								</div>
+								<div class="row top-margin">
+								<div class="col-sm-6">
+									<label>Colonia <span class="text-danger">*</span></label>
+									<input type="text" class="form-control">
+								</div>
+								<div class="col-sm-6">
+									<label>Código postal <span class="text-danger">*</span></label>
+									<input type="text" class="form-control">
+								</div>
+								</div>
+								<div class="row top-margin">
+								<div class="col-sm-6">
+									<label>Ciudad <span class="text-danger">*</span></label>
+									<input type="text" class="form-control">
+								</div>
+								<div class="col-sm-6">
+									<label>Pais <span class="text-danger">*</span></label>
+									<input type="text" class="form-control">
+								</div>
+								</div>
+								<div class="top-margin">
+									<label>Telefono <span class="text-danger"></span></label>
 									<input type="text" class="form-control">
 								</div>
 								<div class="top-margin">
@@ -65,13 +109,14 @@
 								</select>
 								</div>
 							    <div class="top-margin">
-								<label>Tiempo<span class="text-danger">*</span></label>
+								<label>Tiempo <span class="text-danger">*</span></label>
 								<select class="form-control">
-								    <option value="1">Una hora</option>
-								    <option value="2">Dos horas</option>
-								    <option value="3">Tres horas</option>
-								    <option value="4">Cuatro horas</option>
-								    <option value="4">Cinco horas</option>
+								    <option value="01:00:00">Una hora</option>
+								    <option value="02:00:00">Dos horas</option>
+								    <option value="03:00:00">Tres horas</option>
+								    <option value="04:00:00">Cuatro horas</option>
+								    <option value="05:00:00">Cinco horas</option>
+								    <option value="06:00:00">Seis horas</option>
 								</select>
 								</div>
 								<hr>
@@ -79,7 +124,7 @@
 									<div class="col-lg-8">
 									</div>
 									<div class="col-lg-4 text-right">
-										<button class="btn btn-action" type="submit">Editar</button>
+										<button class="btn btn-action" type="submit">Actualizar</button>
 									</div>
 								</div>
 							</form>
@@ -93,7 +138,6 @@
 
 		</div>
 	</div>	<!-- /container -->
-	
 
 	<?php 
 		include("footer.php") 
