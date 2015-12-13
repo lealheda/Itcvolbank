@@ -22,6 +22,15 @@ class Usuario {
                           VALUES ( '$this->usuario','$this->contrasena', '$this->tipo_usuario', '$this->correo_electronico');");
     }
 
+    public function get() {
+        $coneccion = new Database();
+        $query = $coneccion->query("SELECT * FROM usuario");
+        while ($obj = $query->fetch_object()) {
+            echo '<br>';
+            echo $obj->usuario;
+        }
+    }
+
 }
 
  ?>
