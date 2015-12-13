@@ -4,7 +4,7 @@
 
 		class Formulario{
 			
-			public function get() {
+			public function getHabilidad() {
 		    $coneccion = new Database();
 		        return $query = $coneccion->query("SELECT * FROM habilidad");
 		    }

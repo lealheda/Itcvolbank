@@ -115,7 +115,7 @@
 									<?php
 											require 'modelos/Formulario.php';
 											$param = new Formulario();
-											$query = $param->get();
+											$query = $param->getHabilidad();
 											while ($obj = $query->fetch_object()) {
 												echo '<option value="'.$obj->id.'">'.$obj->nombre.'</option>';
 										        }
