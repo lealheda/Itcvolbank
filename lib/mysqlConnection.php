@@ -1,27 +1,43 @@
 <?php
-    $config = parse_ini_file('../config.ini');
-    class MysqlConnection {
-        //$mysqli = mysqli_connect("104.236.75.102", "monty", "rioslopez", "itcVolBank");
+    class Database
+    {
+        private $mysqli;
+
+        function __construct() {
+            $config = parse_ini_file('config.ini');
+            $this->mysqli   = new mysqli($config['host'], $config['username'], $config['password'], $config['dbname']);
+        }
+
+        public function query($query)
+        {
+            return $this->mysqli->query($query);
+        }
+
+        public function getInstancia() {
+            return $this->mysqli;
+        }
 
         public function probarConeccion() {
-            $mysqli = new mysqli("104.236.75.102", "monty", "rioslopez", "itcVolBank");
             /* check connection */
-            if ($mysqli->connect_errno) {
-                printf("Connect failed: %s\n", $mysqli->connect_error);
+            if ($this->mysqli->connect_errno) {
+                printf("Connect failed: %s\n", $this->mysqli->connect_error);
                 exit();
             }
 
             /* check if server is alive */
-            if ($mysqli->ping()) {
+            if ($this->mysqli->ping()) {
                 printf ("Our connection is ok!\n");
             } else {
-                printf ("Error: %s\n", $mysqli->error);
+                printf ("Error: %s\n", $this->mysqli->error);
             }
 
             /* close connection */
-            $mysqli->close();
+            $this->mysqli->close();
         }
     }
-    $coneccion = new MysqlConnection();
-    $coneccion->hola();
+
+    $coneccion = new Database();
+    // $coneccion->query("INSERT INTO `itcVolBank`.`habilidad`(`id`,`nombre`,`descripcion`) VALUES ( NULL,'Maestro','Aprendizaje de alguna materia en especifico');");
+    // echo $coneccion->query('SELECT * FROM usuario')->fetch_object()->id;
+    //echo $this->mysqli->query('SELECT * FROM usuario')->fetch_object()->usuario;
 ?>
