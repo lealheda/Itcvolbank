@@ -38,19 +38,19 @@
 									<label>Nombre <span class="text-danger">*</span></label>
 									<input type="text" class="form-control">
 								</div>
-								<div class="row top-margin">
-								<div class="col-sm-6">
+								<div class="top-margin">
 									<label>Descripción <span class="text-danger">*</span></label>
 									<input type="textarea" class="form-control">
 								</div>
+								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Total tiempo <span class="text-danger">*</span></label>
 									<input type="text" class="form-control">
 								</div>
-								</div>
-								<div class="top-margin">
+								<div class="col-sm-6">
 									<label>Numero de voluntarios <span class="text-danger">*</span></label>
 									<input type="text" class="form-control">
+								</div>
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
@@ -60,6 +60,21 @@
 								<div class="col-sm-6">
 									<label>Fecha termino <span class="text-danger">*</span></label>
 									<input type="date" class="form-control">
+								</div>
+								</div>
+								<div class="top-margin">
+									<label>numero de habilidades <span class="text-danger">*</span></label>
+									<input id="numero_habilidades" type="number" class="form-control">
+								</div>
+								<div class="top-margin">
+									<label>Tipos de habilidades <span class="text-danger">*</span></label>
+								</div>	
+								<div id="agregar" class="top-margin">
+									<select onchange="getval(this);">
+								    <option value="1">One</option>
+								    <option value="2">Two</option>
+								</select>
+
 								</div>
 								<div class="row top-margin"></div>
 								<hr>
@@ -92,5 +107,21 @@
 	<script src="assets/js/headroom.min.js"></script>
 	<script src="assets/js/jQuery.headroom.min.js"></script>
 	<script src="assets/js/template.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#numero_habilidades').on('change', function() {
+			  for (var i = 0; i < $(this).val(); i++) {
+			  	$('#agregar').append(#select_habilidad);
+			  };
+			});
+		});
+	</script>
+
+	<script type="text/html"  id="select_habilidad">
+		<option value="1">One</option>
+		<option value="2">Two</option>
+	</script>
+
 </body>
 </html>
