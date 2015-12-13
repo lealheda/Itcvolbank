@@ -49,10 +49,10 @@
 									<label>Colonia <span class="text-danger">*</span></label>
 									<input type="text" class="form-control">
 								</div>
-								<div class="col-sm-6">
+								</div>
+								<div class="top-margin">
 									<label>Código postal <span class="text-danger">*</span></label>
 									<input type="text" class="form-control">
-								</div>
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">

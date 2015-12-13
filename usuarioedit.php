@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include("head.php") ?>
+<?php include("head.php"); 
+	
+?>
 
 <body>
 <?php include("header.php") ?>
@@ -9,7 +11,11 @@
 
 	<!-- container -->
 	<div class="container">
-
+<?php
+										require_once 'modelos/Formulario.php';
+										$param = new Formulario();
+										$param->get();
+									?>
 		<ol class="breadcrumb">
 			<li><a href="index.php">Inicio</a></li>
 			<li><a href="index.php">Usuario</a></li>
@@ -105,11 +111,7 @@
 								<div class="top-margin">
 									<label>Habilidad <span class="text-danger">*</span></label>
 									<select class="form-control">
-								    <option value="Pintor">Pintor</option>
-								    <option value="Maestro">Maestro</option>
-								    <option value="Medico">Medico</option>
-								    <option value="Entrenador">Entrenador</option>
-								    <option value=""></option>
+									<option value="A">A</option>
 								</select>
 								</div>
 							    <div class="top-margin">
