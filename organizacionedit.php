@@ -13,7 +13,7 @@
 		<ol class="breadcrumb">
 			<li><a href="index.php">Inicio</a></li>
 			<li><a href="index.php">Usuario</a></li>
-			<li class="active">Editar usuario</li>
+			<li class="active">Editar organización</li>
 		</ol>
 
 		<div class="row">
@@ -36,18 +36,8 @@
 									<label>Nombre <span class="text-danger">*</span></label>
 									<input type="text" class="form-control">
 								</div>
-								<div class="row top-margin">
-								<div class="col-sm-6">
-									<label>Apellido paterno <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="col-sm-6">
-									<label>Apellido Materno <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
-								</div>
-								</div>
 								<div class="top-margin">
-									<label>Edad <span class="text-danger">*</span></label>
+									<label>Descripción <span class="text-danger"></span></label>
 									<input type="text" class="form-control">
 								</div>
 								<div class="row top-margin">
@@ -55,12 +45,6 @@
 									<label>Calle <span class="text-danger">*</span></label>
 									<input type="text" class="form-control">
 								</div>
-								<div class="col-sm-6">
-									<label>Número <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
-								</div>
-								</div>
-								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Colonia <span class="text-danger">*</span></label>
 									<input type="text" class="form-control">
@@ -101,27 +85,6 @@
 										<label>Confirmar contraseña <span class="text-danger">*</span></label>
 										<input type="password" class="form-control">
 									</div>
-								</div>
-								<div class="top-margin">
-									<label>Habilidad <span class="text-danger">*</span></label>
-									<select class="form-control">
-								    <option value="Pintor">Pintor</option>
-								    <option value="Maestro">Maestro</option>
-								    <option value="Medico">Medico</option>
-								    <option value="Entrenador">Entrenador</option>
-								    <option value=""></option>
-								</select>
-								</div>
-							    <div class="top-margin">
-								<label>Tiempo <span class="text-danger">*</span></label>
-								<select class="form-control">
-								    <option value="01:00:00">Una hora</option>
-								    <option value="02:00:00">Dos horas</option>
-								    <option value="03:00:00">Tres horas</option>
-								    <option value="04:00:00">Cuatro horas</option>
-								    <option value="05:00:00">Cinco horas</option>
-								    <option value="06:00:00">Seis horas</option>
-								</select>
 								</div>
 								<hr>
 								<div class="row">

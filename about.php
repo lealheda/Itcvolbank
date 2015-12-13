@@ -35,6 +35,7 @@
 						<p>*Humildad </p>
 						<p>*Generosidad </p>
 						<p>*Amistad </p>
+						<p>*Trabajo en equipo </p>
 					<h3>Como funciona</h3>
 					<p>	
 						Esto se realiza mediante el mantenimiento de una lista de oportunidades de voluntariado y una lista de voluntarios, 
