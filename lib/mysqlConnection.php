@@ -1,5 +1,5 @@
 <?php
-    require_once '../modelos/Usuario.php';
+
     class Database
     {
         private $mysqli;
@@ -40,8 +40,5 @@
     // $coneccion = new Database();
     // // $coneccion->query("INSERT INTO `itcVolBank`.`habilidad`(`id`,`nombre`,`descripcion`) VALUES ( NULL,'Maestro','Aprendizaje de alguna materia en especifico');");
     // echo $coneccion->query('SELECT * FROM usuario')->fetch_object()->id;
-
-    $usuario = new Usuario();
-    $usuario->get();
     //echo $this->mysqli->query('SELECT * FROM usuario')->fetch_object()->usuario;
 ?>

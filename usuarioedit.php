@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <?php include("head.php"); 
 	
 ?>
 
 <body>
+
 <?php include("header.php") ?>
 
 	<header id="head" class="secondary"></header>
 
+
 	<!-- container -->
 	<div class="container">
-<?php
-										require_once 'modelos/Formulario.php';
-										$param = new Formulario();
-										$param->get();
-									?>
+	
 		<ol class="breadcrumb">
 			<li><a href="index.php">Inicio</a></li>
 			<li><a href="index.php">Usuario</a></li>
@@ -36,7 +35,11 @@
 							<h3 class="thin text-center">editar perfil de cuenta</h3>
 							<p class="text-center text-muted">Favor de llenar los datos </p> </p>
 							<hr>
-
+								<?php
+		require 'modelos/Formulario.php';
+		$param = new Formulario();
+		$param->get();
+	?>
 							<form>
 								<div class="top-margin">
 									<label>Nombre <span class="text-danger">*</span></label>

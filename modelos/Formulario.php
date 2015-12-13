@@ -1,12 +1,8 @@
 <?php
     
-   require_once '../lib/mysqlConnection.php';
+   require_once 'lib/mysqlConnection.php';
 
-		class Formularios{
-			
-			public function __construct() {
-				
-			}
+		class Formulario{
 			
 			public function get() {
 		    $coneccion = new Database();
