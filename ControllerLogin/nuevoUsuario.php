@@ -7,7 +7,8 @@ class NuevoUsuario {
     private $usuario;
 
     public function registrarNuevoUsuario($data) {
-        $this->usuario = new Usuario($data['usuario'], $data['contrasena'], $data['tipo_usuario'], $data['correo_electronico']);
+        $this->usuario = new Usuario();
+        $this->usuario->set($data);
         $this->usuario->guardar();
     }
 

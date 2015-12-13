@@ -32,11 +32,11 @@
 							<form type="POST" action="/Itcvolbank/ControllerLogin/login.php">
 								<div class="top-margin">
 									<label>Usuario <span class="text-danger">*</span></label>
-									<input name="user" type="text" class="form-control">
+									<input name="usuario" type="text" class="form-control">
 								</div>
 								<div class="top-margin">
 									<label>Contraseña <span class="text-danger">*</span></label>
-									<input name="password" type="password" class="form-control">
+									<input name="contrasena" type="password" class="form-control">
 								</div>
 
 								<hr>
@@ -61,9 +61,9 @@
 		</div>
 	</div>	<!-- /container -->
 
-<?php 
-	include("footer.php") 
-?>	
+<?php
+	include("footer.php")
+?>
 
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

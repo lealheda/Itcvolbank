@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+	if (session_id() == "")
+		session_start();  ?>
 <?php include("head.php") ?>
 
 <body class="home">
@@ -21,13 +24,12 @@
 		</p>
 	</div>
 	<!-- /Intro-->
-		
 	<!-- Highlights - jumbotron -->
 	<div class="jumbotron top-space">
 		<div class="container">
-			
+
 			<h3 class="text-center thin">Reasons to use this template</h3>
-			
+
 			<div class="row">
 				<div class="col-md-3 col-sm-6 highlight">
 					<div class="h-caption"><h4><i class="fa fa-cogs fa-5"></i>Bootstrap-powered</h4></div>
@@ -54,7 +56,7 @@
 					</div>
 				</div>
 			</div> <!-- /row  -->
-		
+
 		</div>
 	</div>
 	<!-- /Highlights -->
@@ -73,8 +75,8 @@
 			<div class="col-sm-6">
 				<h3>Nice header. Where do I find more images like that one?</h3>
 				<p>
-					Well, there are thousands of stock art galleries, but personally, 
-					I prefer to use photos from these sites: <a href="http://unsplash.com">Unsplash.com</a> 
+					Well, there are thousands of stock art galleries, but personally,
+					I prefer to use photos from these sites: <a href="http://unsplash.com">Unsplash.com</a>
 					and <a href="http://www.flickr.com/creativecommons/by-2.0/tags/">Flickr - Creative Commons</a></p>
 			</div>
 		</div> <!-- /row -->
@@ -83,8 +85,8 @@
 			<div class="col-sm-6">
 				<h3>Can I use it to build a site for my client?</h3>
 				<p>
-					Yes, you can. You may use this template for any purpose, just don't forget about the <a href="http://creativecommons.org/licenses/by/3.0/">license</a>, 
-					which says: "You must give appropriate credit", i.e. you must provide the name of the creator and a link to the original template in your work. 
+					Yes, you can. You may use this template for any purpose, just don't forget about the <a href="http://creativecommons.org/licenses/by/3.0/">license</a>,
+					which says: "You must give appropriate credit", i.e. you must provide the name of the creator and a link to the original template in your work.
 				</p>
 			</div>
 			<div class="col-sm-6">
@@ -99,7 +101,7 @@
   		</div>
 
 </div>	<!-- /container -->
-	
+
 	<!-- Social links. @TODO: replace by link/instructions in template -->
 	<section id="social">
 		<div class="container">
@@ -117,10 +119,10 @@
 	</section>
 	<!-- /social links -->
 
-<?php 
-	include("footer.php") 
+<?php
+	include("footer.php")
 ?>
-	
+
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>

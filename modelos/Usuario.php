@@ -9,11 +9,18 @@ class Usuario {
     public $tipo_usuario;
     public $correo_electronico;
 
-    public function __construct($usuario, $contrasena, $tipo_usuario, $correo_electronico) {
-        $this->usuario = $usuario;
-        $this->contrasena = $contrasena;
-        $this->tipo_usuario = $tipo_usuario;
-        $this->correo_electronico = $correo_electronico;
+    // public function __construct($usuario, $contrasena, $tipo_usuario, $correo_electronico) {
+    //     $this->usuario = $usuario;
+    //     $this->contrasena = $contrasena;
+    //     $this->tipo_usuario = $tipo_usuario;
+    //     $this->correo_electronico = $correo_electronico;
+    // }
+
+    public function set($data) {
+        $this->usuario = $data['usuario'];
+        $this->contrasena = $data['contrasena'];
+        $this->tipo_usuario = $data['tipo_usuario'];
+        $this->correo_electronico = $data['correo_electronico'];
     }
 
     public function guardar() {
@@ -22,13 +29,10 @@ class Usuario {
                           VALUES ( '$this->usuario','$this->contrasena', '$this->tipo_usuario', '$this->correo_electronico');");
     }
 
-    public function get() {
+    public function getByUsuario($usuario, $contrasena) {
         $coneccion = new Database();
-        $query = $coneccion->query("SELECT * FROM usuario");
-        while ($obj = $query->fetch_object()) {
-            echo '<br>';
-            echo $obj->usuario;
-        }
+        $query = $coneccion->query("SELECT * FROM usuario WHERE usuario = '$usuario' AND contrasena = '$contrasena'");
+        return $query;
     }
 
 }

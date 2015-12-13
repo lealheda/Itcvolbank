@@ -1,3 +1,8 @@
+	<?php
+	require_once 'modelos/TipoDeUsuario.php';
+	if (session_id() == "")
+            session_start();
+	 ?>
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
@@ -11,18 +16,37 @@
 					<li class="active"><a href="index.php">Inicio</a></li>
 					<li><a href="about.php">Acerca de</a></li>
 					<li><a href="contact.php">Contacto</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta VB<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li class="active"><a href="usuarioedit.php">Editar perfil</a></li>
-							<li class="active"><a href="actividades.php">Ver actividades</a></li>
-						</ul>
-					</li>
-					<li><a class="btn" href="signin.php"> Inicia sesión / Registro </a></li>
+					<?php
+					if ($_SESSION['logueado']) {
+					 ?>
+						 <li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta VB<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+									<?php
+								if ($_SESSION['usuario']['tipo_usuario'] == TipoDeUsuario::VOLUNTARIO) {
+								 ?>
+									<li class="active"><a href="usuarioedit.php">Editar perfil</a></li>
+								 <?php
+								} else if ($_SESSION['usuario']['tipo_usuario'] == TipoDeUsuario::ORGANIZACION) {
+								  ?>
+								  	<li class="active"><a href="organizacionedit.php">Editar perfil</a></li>
+								  <?php } ?>
+								<li class="active"><a href="actividades.php">Ver actividades</a></li>
+							</ul>
+						</li>
+					 <?php } ?>
+
+					<?php
+						if ($_SESSION['logueado']) {
+					 ?>
+							<li><a class="btn" href="logout.php"> Salir </a></li>
+					<?php } else { ?>
+							<li><a class="btn" href="signin.php"> Inicia sesión / Registro </a></li>
+						   <?php } ?>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
-	</div> 
+	</div>
 	<!-- /.navbar -->	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
@@ -36,16 +60,35 @@
 					<li class="active"><a href="index.php">Inicio</a></li>
 					<li><a href="about.php">Acerca de</a></li>
 					<li><a href="contact.php">Contacto</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta VB<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li class="active"><a href="usuarioedit.php">Editar perfil</a></li>
-							<li class="active"><a href="actividades.php">Ver actividades</a></li>
-						</ul>
-					</li>
-					<li><a class="btn" href="signin.php"> Inicia sesión / Registro </a></li>
+							<?php
+					if ($_SESSION['logueado']) {
+					 ?>
+						 <li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Cuenta VB<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+									<?php
+								if ($_SESSION['usuario']['tipo_usuario'] == TipoDeUsuario::VOLUNTARIO) {
+								 ?>
+									<li class="active"><a href="usuarioedit.php">Editar perfil</a></li>
+								 <?php
+								} else if ($_SESSION['usuario']['tipo_usuario'] == TipoDeUsuario::ORGANIZACION) {
+								  ?>
+								  	<li class="active"><a href="organizacionedit.php">Editar perfil</a></li>
+								  <?php } ?>
+								<li class="active"><a href="actividades.php">Ver actividades</a></li>
+							</ul>
+						</li>
+					 <?php } ?>
+
+					<?php
+						if ($_SESSION['logueado']) {
+					 ?>
+							<li><a class="btn" href="logout.php"> Salir </a></li>
+					<?php } else { ?>
+							<li><a class="btn" href="signin.php"> Inicia sesión / Registro </a></li>
+						   <?php } ?>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
-	</div> 
+	</div>
 	<!-- /.navbar -->
