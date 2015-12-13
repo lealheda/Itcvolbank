@@ -32,14 +32,6 @@
 
 							<form>
 								<div class="top-margin">
-									<label>Nombre</label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="top-margin">
-									<label>Apellidos</label>
-									<input type="text" class="form-control">
-								</div>
-								<div class="top-margin">
 									<label>Correo electronico <span class="text-danger">*</span></label>
 									<input type="text" class="form-control">
 								</div>
