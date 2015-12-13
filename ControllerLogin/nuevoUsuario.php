@@ -1,24 +1,33 @@
 <?php
 
 require_once '../modelos/Usuario.php';
+require_once '../modelos/TipoDeUsuario.php';
 
 class NuevoUsuario {
+    private $usuario;
+
     public function registrarNuevoUsuario($data) {
-        var_dump($data);
-        $usuario = new Usuario($data['usuario'], $data['contrasena'], $data['tipo_usuario'], $data['correo_electronico']);
-        $usuario->guardar();;
+        $this->usuario = new Usuario($data['usuario'], $data['contrasena'], $data['tipo_usuario'], $data['correo_electronico']);
+        $this->usuario->guardar();
     }
 
-    public function redireccionarIndex() {
-        header("Location: ../index.php");
-        die();
+    public function redireccionarTipoUsuario() {
+        if ($this->usuario->tipo_usuario == TipoDeUsuario::VOLUNTARIO) {
+            header("Location: ../usuarioedit.php");
+            die();
+        } else if ($this->usuario->tipo_usuario == TipoDeUsuario::ORGANIZACION) {
+            header("Location: ../organizacionedit.php");
+            die();
+        } else {
+            header("Location: ../index.php");
+            die();
+        }
     }
 }
 
-var_dump($_REQUEST);
 $nuevoUsuario = new NuevoUsuario();
 $nuevoUsuario->registrarNuevoUsuario($_REQUEST);
-$nuevoUsuario->redireccionarIndex();
+$nuevoUsuario->redireccionarTipoUsuario();
 
 
  ?>
