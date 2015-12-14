@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include("head.php"); 
-	
+<?php include("head.php");
+require_once 'modelos/Formulario.php';
+
 ?>
 
 <body>
@@ -19,61 +20,57 @@
 
 
 		<div class="row">
-			
+
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
 					<h1 class="page-title">Nueva actividad</h1>
 				</header>
-				
+
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<h3 class="thin text-center">Nueva actividad</h3>
 							<p class="text-center text-muted">Favor de llenar los datos </p> </p>
 							<hr>
-								
-							<form>
+
+							<form type="POST" action="/Itcvolbank/ControllerLogin/NuevaActividad.php">
 								<div class="top-margin">
 									<label>Nombre <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input name="nombre" type="text" class="form-control">
 								</div>
 								<div class="top-margin">
 									<label>Descripción <span class="text-danger">*</span></label>
-									<input type="textarea" class="form-control">
+									<input name="descripcion" type="textarea" class="form-control">
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Total tiempo <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input name="total_tiempo" type="text" class="form-control">
 								</div>
 								<div class="col-sm-6">
 									<label>Numero de voluntarios <span class="text-danger">*</span></label>
-									<input type="text" class="form-control">
+									<input name="numero_voluntarios" type="text" class="form-control">
 								</div>
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Fecha inicio <span class="text-danger">*</span></label>
-									<input type="date" class="form-control">
+									<input name="fecha_inicio" type="date" class="form-control">
 								</div>
 								<div class="col-sm-6">
 									<label>Fecha termino <span class="text-danger">*</span></label>
-									<input type="date" class="form-control">
+									<input name="fecha_termino" type="date" class="form-control">
 								</div>
 								</div>
 								<div class="top-margin">
 									<label>numero de habilidades <span class="text-danger">*</span></label>
-									<input id="numero_habilidades" type="number" class="form-control">
+									<input name="" id="numero_habilidades" type="number" class="form-control">
 								</div>
 								<div class="top-margin">
 									<label>Tipos de habilidades <span class="text-danger">*</span></label>
-								</div>	
+								</div>
 								<div id="agregar" class="top-margin">
-									<select onchange="getval(this);">
-								    <option value="1">One</option>
-								    <option value="2">Two</option>
-								</select>
 
 								</div>
 								<div class="row top-margin"></div>
@@ -90,17 +87,17 @@
 					</div>
 
 				</div>
-				
+
 			</article>
 			<!-- /Article -->
 
 		</div>
 	</div>	<!-- /container -->
 
-	<?php 
-		include("footer.php") 
+	<?php
+		include("footer.php")
 	?>
-	
+
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
@@ -111,16 +108,29 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#numero_habilidades').on('change', function() {
+			  if($(this).val() > 5 ) {
+			  	alert('No debe de ser mayor que 5')
+			  	$(this).val(5);
+			  }
+			  $('#agregar').html('');
 			  for (var i = 0; i < $(this).val(); i++) {
-			  	$('#agregar').append(#select_habilidad);
+			  	$('#agregar').append($('#select_habilidad').html());
 			  };
 			});
 		});
 	</script>
 
 	<script type="text/html"  id="select_habilidad">
-		<option value="1">One</option>
-		<option value="2">Two</option>
+		<select name="id_actividad[]" class="form-control">
+			<?php
+				$formulario = new Formulario();
+				$query_result = $formulario->getHabilidad();
+				while ($actividad = $query_result->fetch_object()) {
+			 	?>
+			 		<option value="<?php echo $actividad->id ?>"><?php echo $actividad->nombre ?></option>
+			 <?php } ?>
+		</select>
+
 	</script>
 
 </body>

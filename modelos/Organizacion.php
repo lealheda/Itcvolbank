@@ -30,7 +30,18 @@ class Organizacion {
     public function guardar() {
         $coneccion = new Database();
         $coneccion->query("INSERT INTO organizacion (nombre, calle, numero, colonia, codigo_postal, ciudad, pais, telefono, descripcion, estado)
-                            VALUES ( '$this->nombre', '$this->calle', '$this->numero', '$this->colonia', '$this->codigo_postal', '$this->ciudad', '$this->pais', '$this->telefono', '$this->descripcion', '$this->estado' )");
+                            VALUES (
+                                '$this->nombre'
+                                , '$this->calle'
+                                , '$this->numero'
+                                , '$this->colonia'
+                                , '$this->codigo_postal'
+                                , '$this->ciudad'
+                                , '$this->pais'
+                                , '$this->telefono'
+                                , '$this->descripcion'
+                                , '$this->estado'
+                                )");
     }
 
 }
