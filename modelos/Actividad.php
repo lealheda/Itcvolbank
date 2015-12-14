@@ -1,6 +1,6 @@
 <?php
 
-require_once 'lib/mysqlConnection.php';
+require_once '../lib/mysqlConnection.php';
 
 class Actividad {
 
@@ -16,7 +16,7 @@ class Actividad {
     public function set($data) {
         $this->nombre = $data['nombre'];
         $this->descripcion = $data['descripcion'];
-        $this->id_usuario = $_SESSION['id'];
+        $this->id_usuario = $_SESSION['usuario']['id'];
         $this->total_tiempo = $data['total_tiempo'];
         $this->numero_voluntarios = $data['numero_voluntarios'];
         $this->fecha_inicio = $data['fecha_inicio'];
@@ -27,7 +27,7 @@ class Actividad {
         $database = new Database();
         $database->query("INSERT INTO actividad ( nombre, descripcion, id_usuario, total_tiempo, numero_voluntarios, fecha_inicio, fecha_termino )
                         VALUES (
-                            , '$this->nombre'
+                             '$this->nombre'
                             , '$this->descripcion'
                             , '$this->id_usuario'
                             , '$this->total_tiempo'
@@ -35,10 +35,8 @@ class Actividad {
                             , '$this->fecha_inicio'
                             , '$this->fecha_termino'
                          )");
+        return $database->getInstancia()->insert_id;
     }
 }
-
-$actividad = new Actividad();
-$actividad->nueva($_REQUEST);
 
  ?>

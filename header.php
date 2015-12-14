@@ -32,6 +32,7 @@
 								  	<li class="active"><a href="organizacionedit.php">Editar perfil</a></li>
 								  <?php } ?>
 								<li class="active"><a href="actividades.php">Ver actividades</a></li>
+								<li class="active"><a href="nuevactividad.php">Nueva actividad</a></li>
 							</ul>
 						</li>
 					 <?php } ?>
@@ -76,6 +77,7 @@
 								  	<li class="active"><a href="organizacionedit.php">Editar perfil</a></li>
 								  <?php } ?>
 								<li class="active"><a href="actividades.php">Ver actividades</a></li>
+								<li class="active"><a href="nuevactividad.php">Nueva actividad</a></li>
 							</ul>
 						</li>
 					 <?php } ?>

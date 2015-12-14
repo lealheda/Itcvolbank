@@ -46,7 +46,7 @@ require_once 'modelos/Formulario.php';
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Total tiempo <span class="text-danger">*</span></label>
-									<input name="total_tiempo" type="text" class="form-control">
+									<input name="total_tiempo" type="time" class="form-control">
 								</div>
 								<div class="col-sm-6">
 									<label>Numero de voluntarios <span class="text-danger">*</span></label>
