@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include("head.php") ?>
+<?php include("head.php");
+require 'modelos/organizacion.php';
+?>
 
 <body>
 <?php include("header.php") ?>
@@ -23,7 +25,10 @@
 				<header class="page-header">
 					<h1 class="page-title">Editar perfil</h1>
 				</header>
-
+				<?php
+					$param = new Organizacion();
+					$result = $param->getOrganizacion();
+				?>
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
@@ -34,29 +39,31 @@
 							<form type="POST" action="/Itcvolbank/ControllerLogin/OrganizacionEdit.php">
 								<div class="top-margin">
 									<label>Nombre <span class="text-danger">*</span></label>
-									<input name="nombre" type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->nombre;?>">
 								</div>
 								<div class="top-margin">
 									<label>Descripción <span class="text-danger"></span></label>
-									<input name="descripcion" type="text" class="form-control">
-								</div>
-								<div class="top-margin">
-									<label>Número <span class="text-danger"></span></label>
-									<input name="numero" type="text" class="form-control">
+									<input name="descripcion" type="text" class="form-control" value="<?php echo $result->descripcion;?>">
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Calle <span class="text-danger">*</span></label>
-									<input name="calle" type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->calle;?>">
 								</div>
 								<div class="col-sm-6">
+									<label>Número <span class="text-danger">*</span></label>
+									<input type="text" class="form-control" value="<?php echo $result->numero;?>">
+								</div>
+								</div>
+								<div class="row top-margin">
+								<div class="col-sm-6">
 									<label>Colonia <span class="text-danger">*</span></label>
-									<input name="colonia" type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->colonia;?>">
 								</div>
-								</div>
-								<div class="top-margin">
+								<div class="col-sm-6">
 									<label>Código postal <span class="text-danger">*</span></label>
-									<input name="codigo_postal" type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->codigo_postal;?>">
+								</div>
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
@@ -78,7 +85,17 @@
 								</div>
 								<div class="top-margin">
 									<label>Correo electronico <span class="text-danger">*</span></label>
-									<input name="correo_electronico" type="text" class="form-control">
+									<input type="text" class="form-control" value="<?php echo $result->correo_electronico;?>">
+								</div>
+								<div class="row top-margin">
+									<div class="col-sm-6">
+										<label>Contraseña <span class="text-danger">*</span></label>
+										<input type="password" class="form-control" value="<?php echo $result->contrasena;?>">
+									</div>
+									<div class="col-sm-6">
+										<label>Confirmar contraseña <span class="text-danger">*</span></label>
+										<input type="password" class="form-control" value="<?php echo $result->contrasena;?>">
+									</div>
 								</div>
 								<hr>
 								<div class="row">

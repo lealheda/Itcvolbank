@@ -24,7 +24,6 @@ require 'modelos/Formulario.php';
 				</header>
 
 				<?php
-				
 					$param = new Formulario();
 					$result = $param->getVoluntario();
 				?>
