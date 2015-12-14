@@ -12,7 +12,6 @@
 		    public function getVoluntario() {
 		    $coneccion = new Database();
                 $id = $_SESSION['usuario']['id'];
-		    	var_dump($id);
 		    	$obj = $coneccion->query("SELECT usu.*,IFNULL(nombre, '') AS nombre,IFNULL(apellido_paterno, '') AS apellido_paterno, IFNULL(apellido_materno, '') AS apellido_materno, IFNULL(edad, 0) AS edad,
 				IFNULL(calle, '') AS calle, IFNULL(numero, 0) AS numero, IFNULL(colonia, '') AS colonia, IFNULL(codigo_postal, 0) AS codigo_postal, IFNULL(id_habilidad, 1) AS id_habilidad,
 				IFNULL(tiempo, '00:00:00') AS tiempo, IFNULL(ciudad, '') AS ciudad, IFNULL(pais,'') AS pais, IFNULL(telefono, '') AS telefono, IFNULL(estado, '') AS estado
@@ -56,15 +55,15 @@
 		    public function getOrganizacion() {
             $coneccion = new Database();
                 /*$id = $_SESSION['usuario']['id'];
-                $obj = $coneccion->query("SELECT usu.*,IFNULL(nombre, '') AS nombre, IFNULL(calle, '') AS calle, IFNULL(numero, 0) AS numero, IFNULL(colonia, '') AS colonia, 
-                    IFNULL(codigo_postal, 0) AS codigo_postal, IFNULL(ciudad, '') AS ciudad, IFNULL(pais,'') AS pais, IFNULL(telefono, '') AS telefono, 
+                $obj = $coneccion->query("SELECT usu.*,IFNULL(nombre, '') AS nombre, IFNULL(calle, '') AS calle, IFNULL(numero, 0) AS numero, IFNULL(colonia, '') AS colonia,
+                    IFNULL(codigo_postal, 0) AS codigo_postal, IFNULL(ciudad, '') AS ciudad, IFNULL(pais,'') AS pais, IFNULL(telefono, '') AS telefono,
                     IFNULL(descripcion, '') AS descripcion, IFNULL(estado, '') AS estado
                     FROM usuario usu
                     LEFT JOIN organizacion org ON org.id_usuario = usu.id
                     WHERE usu.id=$id");
                             */
-        $obj = $coneccion->query("SELECT usu.*,IFNULL(nombre, '') AS nombre, IFNULL(calle, '') AS calle, IFNULL(numero, 0) AS numero, IFNULL(colonia, '') AS colonia, 
-            IFNULL(codigo_postal, 0) AS codigo_postal, IFNULL(ciudad, '') AS ciudad, IFNULL(pais,'') AS pais, IFNULL(telefono, '') AS telefono, 
+        $obj = $coneccion->query("SELECT usu.*,IFNULL(nombre, '') AS nombre, IFNULL(calle, '') AS calle, IFNULL(numero, 0) AS numero, IFNULL(colonia, '') AS colonia,
+            IFNULL(codigo_postal, 0) AS codigo_postal, IFNULL(ciudad, '') AS ciudad, IFNULL(pais,'') AS pais, IFNULL(telefono, '') AS telefono,
             IFNULL(descripcion, '') AS descripcion, IFNULL(estado, '') AS estado
             FROM usuario usu
             LEFT JOIN organizacion org ON org.id_usuario = usu.id

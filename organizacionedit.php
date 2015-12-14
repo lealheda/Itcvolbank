@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include("head.php");
-require 'modelos/organizacion.php';
+require 'modelos/Organizacion.php';
 ?>
 
 <body>
