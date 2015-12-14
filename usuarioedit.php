@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include("head.php"); 
+
+<?php include("head.php");
 require 'modelos/Formulario.php';
+
+
 ?>
 
 <body>
 <?php include("header.php"); ?>
+	<?php
 
+		$param = new Formulario();
+		$result = $param->getVoluntario();
+	?>
 	<header id="head" class="secondary"></header>
 	<!-- container -->
 	<div class="container">
+
 		<ol class="breadcrumb">
 			<li><a href="index.php">Inicio</a></li>
 			<li><a href="index.php">Usuario</a></li>
 			<li class="active">Editar usuario</li>
 		</ol>
 		<div class="row">
-			
+
 			<!-- Article main content -->
 			<article class="col-xs-12 maincontent">
 				<header class="page-header">
 					<h1 class="page-title">Editar perfil</h1>
 				</header>
 
+
 				<?php
 					$param = new Formulario();
 					$result = $param->getVoluntario();
 				?>
+
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<h3 class="thin text-center">editar perfil de cuenta</h3>
 							<p class="text-center text-muted">Favor de llenar los datos </p> </p>
 							<hr>
-								
+
 							<form>
 								<div class="top-margin">
 									<label>Nombre <span class="text-danger">*</span></label>
@@ -109,7 +119,7 @@ require 'modelos/Formulario.php';
 									<label>Habilidad <span class="text-danger">*</span></label>
 									<select class="form-control">
 									<?php
-											
+
 											$param = new Formulario();
 											$query = $param->getHabilidad();
 											while ($obj = $query->fetch_object()) {
@@ -142,17 +152,17 @@ require 'modelos/Formulario.php';
 					</div>
 
 				</div>
-				
+
 			</article>
 			<!-- /Article -->
 
 		</div>
 	</div>	<!-- /container -->
 
-	<?php 
-		include("footer.php") 
+	<?php
+		include("footer.php")
 	?>
-	
+
 	<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
