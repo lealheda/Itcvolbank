@@ -31,13 +31,16 @@ class Login {
             'usuario' => $usuario->usuario,
             'tipo_usuario' => $usuario->tipo_usuario,
             'id' => $usuario->id
-            );
+        );
     }
 }
 
 $login = new Login();
 if ($login->check($_REQUEST)) {
     header('Location: ../index.php');
+    die();
+} else {
+    header('Location: ../index.php?login=false');
     die();
 }
 

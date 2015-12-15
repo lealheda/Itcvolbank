@@ -1,6 +1,6 @@
 <?php
 
-require_once '../lib/mysqlConnection.php';
+require_once 'mysqlConnection.php';
 
 class Actividad {
 

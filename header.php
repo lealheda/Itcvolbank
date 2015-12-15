@@ -2,6 +2,9 @@
 	require_once 'modelos/TipoDeUsuario.php';
 	if (session_id() == "")
             session_start();
+        if (!array_key_exists('logueado', $_SESSION)) {
+        	$_SESSION['logueado'] = false;
+        }
 	 ?>
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
