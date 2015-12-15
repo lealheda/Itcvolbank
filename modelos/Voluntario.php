@@ -23,7 +23,7 @@ class Voluntario {
      public function guardar_editado($id) {
         $coneccion = new Database();
         $coneccion->query(
-            "UPDATE usuario
+            "UPDATE voluntario
             SET
             nombre = '$this->nombre',
             apellido_paterno = '$this->apellido_paterno',
@@ -126,9 +126,9 @@ class Voluntario {
                     }
             }
 
-        
 
-   
+
+
 }
 
 if (session_id() == "")
