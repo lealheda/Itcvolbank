@@ -44,62 +44,62 @@ require 'modelos/Formulario.php';
 							<p class="text-center text-muted">Favor de llenar los datos </p> </p>
 							<hr>
 
-							<form>
+							<form type="POST" action="/Itcvolbank/ControllerLogin/UsuarioEdit.php">
 								<div class="top-margin">
 									<label>Nombre <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->nombre;?>">
+									<input name="nombre" type="text" class="form-control" value="<?php echo $result->nombre;?>">
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Apellido paterno <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->apellido_paterno;?>">
+									<input name="apellido_paterno" type="text" class="form-control" value="<?php echo $result->apellido_paterno;?>">
 								</div>
 								<div class="col-sm-6">
 									<label>Apellido Materno <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->apellido_materno;?>">
+									<input name="apellido_materno" type="text" class="form-control" value="<?php echo $result->apellido_materno;?>">
 								</div>
 								</div>
 								<div class="top-margin">
 									<label>Edad <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->edad;?>">
+									<input name="edad" type="text" class="form-control" value="<?php echo $result->edad;?>">
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Calle <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->calle;?>">
+									<input name="calle" type="text" class="form-control" value="<?php echo $result->calle;?>">
 								</div>
 								<div class="col-sm-6">
 									<label>Número <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->numero;?>">
+									<input name="numero" type="text" class="form-control" value="<?php echo $result->numero;?>">
 								</div>
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Colonia <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->colonia;?>">
+									<input name="colonia" type="text" class="form-control" value="<?php echo $result->colonia;?>">
 								</div>
 								<div class="col-sm-6">
 									<label>Código postal <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->codigo_postal;?>">
+									<input name="codigo_postal" type="text" class="form-control" value="<?php echo $result->codigo_postal;?>">
 								</div>
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Ciudad <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->ciudad;?>">
+									<input name="ciudad" type="text" class="form-control" value="<?php echo $result->ciudad;?>">
 								</div>
 								<div class="col-sm-6">
 									<label>Estado <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->estado;?>">
+									<input name="estado" type="text" class="form-control" value="<?php echo $result->estado;?>">
 								</div>
 								</div>
 								<div class="top-margin">
 									<label>Pais <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->pais;?>">
+									<input name="pais" type="text" class="form-control" value="<?php echo $result->pais;?>">
 								</div>
 								<div class="top-margin">
 									<label>Telefono <span class="text-danger"></span></label>
-									<input type="text" class="form-control" value="<?php echo $result->telefono;?>">
+									<input name="telefono" type="text" class="form-control" value="<?php echo $result->telefono;?>">
 								</div>
 								<div class="top-margin">
 									<label>Correo electronico <span class="text-danger">*</span></label>
@@ -117,7 +117,7 @@ require 'modelos/Formulario.php';
 								</div>
 								<div class="top-margin">
 									<label>Habilidad <span class="text-danger">*</span></label>
-									<select class="form-control">
+									<select name="id_habilidad" class="form-control">
 									<?php
 
 											$param = new Formulario();
@@ -130,7 +130,7 @@ require 'modelos/Formulario.php';
 								</div>
 							    <div class="top-margin">
 								<label>Tiempo <span class="text-danger">*</span></label>
-								<select class="form-control">
+								<select name="tiempo" class="form-control">
 								    <option value="01:00:00">Una hora</option>
 								    <option value="02:00:00">Dos horas</option>
 								    <option value="03:00:00">Tres horas</option>
