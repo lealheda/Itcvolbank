@@ -51,7 +51,7 @@
 								</div>
 
 								<div class="top-margin">
-									<label>Habilidad <span class="text-danger">*</span></label>
+									<label>Tipo de cuenta <span class="text-danger">*</span></label>
 									<select name="tipo_usuario" class="form-control">
 									    <option value="1">Voluntario</option>
 									    <option value="2">Organización</option>

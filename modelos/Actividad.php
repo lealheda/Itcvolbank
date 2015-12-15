@@ -37,6 +37,20 @@ class Actividad {
                          )");
         return $database->getInstancia()->insert_id;
     }
+
+    public function getActividad() {
+            $coneccion = new Database();
+                $obj = $coneccion->query(" SELECT act.*, CONCAT(IFNULL(vol.nombre,''),' ',IFNULL(vol.`apellido_paterno`,''), ' ',IFNULL(vol.`apellido_materno`,'')) AS nombre_voluntario,
+                    IFNULL(org.`nombre`,'') AS nombre_organizacion, GROUP_CONCAT(hab.nombre SEPARATOR ',') AS habilidad
+                    FROM actividad AS act
+                    LEFT JOIN voluntario AS vol ON act.`id_usuario`=vol.`id_usuario`
+                    LEFT JOIN organizacion AS org ON act.`id_usuario`=org.`id_usuario`
+                    INNER JOIN actividad_habilidad AS acthab ON act.`id`=acthab.id_actividad
+                    INNER JOIN habilidad AS hab ON hab.`id`=acthab.`id_habilidad`
+                    GROUP BY act.`id` ");
+                    return $obj;
+            }
+
 }
 
  ?>

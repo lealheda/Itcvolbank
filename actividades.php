@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include("head.php") ?>
+<?php include("head.php"); 
+    require 'modelos/actividad.php';
+?>
 
 <body class="home">
 <?php include("header.php") ?>
@@ -20,14 +22,17 @@
 		</p>
 	</div>
 		<div class="container">
-	
+	       <?php
+                    $param = new Actividad();
+                    $result = $param->getActividad();
+                ?>
 			<table id="actividades" class="table table-hover" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th># actividad</th>
                 <th>Nombre</th>
                 <th>Descripción</th>
-                <th>Nombre usuario</th>
+                <th>Voluntario/Organizacion</th>
                 <th>Tiempo total</th>
                 <th>Numero voluntarios</th>
                 <th>Fecha inicio</th>
@@ -43,7 +48,7 @@
                 <th>Descripción</th>
                 <th>Nombre usuario</th>
                 <th>Tiempo total</th>
-                <th>Numero voluntarios</th>
+                <th>Voluntario/Organizacion</th>
                 <th>Fecha inicio</th>
                 <th>Fecha termino</th>
                 <th>Habilidades</th>
@@ -51,30 +56,29 @@
             </tr>
         </tfoot>
         <tbody>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011/04/25</td>
-                <td>$320,800</td>
-            </tr>
-            <tr>
-                <td>Garrett Winters</td>
-                <td>Accountant</td>
-                <td>Tokyo</td>
-                <td>63</td>
-                <td>2011/07/25</td>
-                <td>$170,750</td>
-            </tr>
-            <tr>
-                <td>Donna Snider</td>
-                <td>Customer Support</td>
-                <td>New York</td>
-                <td>27</td>
-                <td>2011/01/25</td>
-                <td>$112,000</td>
-            </tr>
+            
+                <?php
+                    while ($actividad = $result->fetch_object()) {
+                    echo "<tr>";
+                    echo "<td>$actividad->id</td>";
+                    echo "<td>$actividad->nombre</td>";
+                    echo "<td>$actividad->descripcion</td>";
+                    if($actividad->nombre_voluntario!='  '){
+                        echo "<td>$actividad->nombre_voluntario</td>";    
+                    }
+                    if($actividad->nombre_organizacion!=''){
+                        echo "<td>$actividad->nombre_organizacion</td>";    
+                    }
+                    echo "<td>$actividad->total_tiempo</td>";
+                    echo "<td>$actividad->numero_voluntarios</td>";
+                    echo "<td>$actividad->fecha_inicio</td>";
+                    echo "<td>$actividad->fecha_termino</td>";
+                    echo "<td>$actividad->habilidad</td>";
+                    echo "<td><a href=".">Ver</a>/<a href=".">Aplicar</a></td>";
+                    echo "</tr>";
+                    }
+                ?>
+                
         </tbody>
     </table>
 </div>
@@ -91,3 +95,5 @@
 
 </body>
 </html>
+
+
