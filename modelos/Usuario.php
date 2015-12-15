@@ -1,6 +1,6 @@
 <?php
 
-require_once '../lib/mysqlConnection.php';
+require_once 'mysqlConnection.php';
 
 class Usuario {
     public $id;
@@ -8,13 +8,6 @@ class Usuario {
     public $contrasena;
     public $tipo_usuario;
     public $correo_electronico;
-
-    // public function __construct($usuario, $contrasena, $tipo_usuario, $correo_electronico) {
-    //     $this->usuario = $usuario;
-    //     $this->contrasena = $contrasena;
-    //     $this->tipo_usuario = $tipo_usuario;
-    //     $this->correo_electronico = $correo_electronico;
-    // }
 
     public function set($data) {
         $this->usuario = $data['usuario'];

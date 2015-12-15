@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include("head.php"); 
-    require 'modelos/actividad.php';
+<?php include("head.php");
+    require 'modelos/Actividad.php';
 ?>
 
 <body class="home">
@@ -56,7 +56,7 @@
             </tr>
         </tfoot>
         <tbody>
-            
+
                 <?php
                     while ($actividad = $result->fetch_object()) {
                     echo "<tr>";
@@ -64,10 +64,10 @@
                     echo "<td>$actividad->nombre</td>";
                     echo "<td>$actividad->descripcion</td>";
                     if($actividad->nombre_voluntario!='  '){
-                        echo "<td>$actividad->nombre_voluntario</td>";    
+                        echo "<td>$actividad->nombre_voluntario</td>";
                     }
                     if($actividad->nombre_organizacion!=''){
-                        echo "<td>$actividad->nombre_organizacion</td>";    
+                        echo "<td>$actividad->nombre_organizacion</td>";
                     }
                     echo "<td>$actividad->total_tiempo</td>";
                     echo "<td>$actividad->numero_voluntarios</td>";
@@ -78,13 +78,13 @@
                     echo "</tr>";
                     }
                 ?>
-                
+
         </tbody>
     </table>
 </div>
 
-<?php 
-	include("footer.php") 
+<?php
+	include("footer.php")
 ?>
 		<!-- JavaScript libs are placed at the end of the document so the pages load faster -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

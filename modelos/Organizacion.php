@@ -1,8 +1,9 @@
 <?php
 
-require_once 'lib/mysqlConnection.php';
+require_once 'mysqlConnection.php';
 
 class Organizacion {
+
     public $id;
     public $nombre;
     public $calle;
@@ -14,6 +15,37 @@ class Organizacion {
     public $telefono;
     public $descripcion;
     public $estado;
+
+    public function guardar_editado($id) {
+        $coneccion = new Database();
+        $coneccion->query(
+            "UPDATE organizacion
+            SET
+            nombre = '$this->nombre',
+            calle = '$this->calle',
+            numero = '$this->calle',
+            colonia = '$this->colonia',
+            codigo_postal = '$this->ciudad',
+            pais = '$this->pais',
+            telefono = '$this->telefono',
+            descripcion = '$this->descripcion',
+            estado = '$this->estado'
+            WHERE id = '$id' "
+
+            );
+    }
+
+    public function esNuevo($id) {
+        $coneccion = new Database();
+        $result = $coneccion->query("SELECT id FROM organizacion WHERE id = $id");
+        $result_object = $result->fetch_object();
+        if(is_object($result_object)) {
+            return $result_object->id;
+        } else {
+            return false;
+        }
+    }
+
     public function nuevo($data) {
         $this->nombre = $data['nombre'];
         $this->calle = $data['calle'];
@@ -27,9 +59,10 @@ class Organizacion {
         $this->estado = $data['estado'];
     }
 
-    public function guardar() {
+    public function guardar_nuevo() {
         $coneccion = new Database();
-        $coneccion->query("INSERT INTO organizacion (nombre, calle, numero, colonia, codigo_postal, ciudad, pais, telefono, descripcion, estado)
+        $this->id_usuario = $_SESSION['usuario']['id'];
+        $coneccion->query("INSERT INTO organizacion (nombre, calle, numero, colonia, codigo_postal, ciudad, pais, telefono, descripcion, estado, id_usuario)
                             VALUES (
                                 '$this->nombre'
                                 , '$this->calle'
@@ -41,6 +74,7 @@ class Organizacion {
                                 , '$this->telefono'
                                 , '$this->descripcion'
                                 , '$this->estado'
+                                , '$this->id_usuario'
                                 )");
     }
 
@@ -83,5 +117,8 @@ class Organizacion {
             }
 
 }
+
+if (session_id() == "")
+            session_start();
 
  ?>

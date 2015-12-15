@@ -39,7 +39,7 @@ require 'modelos/Organizacion.php';
 							<form type="POST" action="/Itcvolbank/ControllerLogin/OrganizacionEdit.php">
 								<div class="top-margin">
 									<label>Nombre <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->nombre;?>">
+									<input name="nombre" type="text" class="form-control" value="<?php echo $result->nombre;?>">
 								</div>
 								<div class="top-margin">
 									<label>Descripción <span class="text-danger"></span></label>
@@ -48,21 +48,21 @@ require 'modelos/Organizacion.php';
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Calle <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->calle;?>">
+									<input name="calle" type="text" class="form-control" value="<?php echo $result->calle;?>">
 								</div>
 								<div class="col-sm-6">
 									<label>Número <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->numero;?>">
+									<input name="numero" type="text" class="form-control" value="<?php echo $result->numero;?>">
 								</div>
 								</div>
 								<div class="row top-margin">
 								<div class="col-sm-6">
 									<label>Colonia <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->colonia;?>">
+									<input name="colonia" type="text" class="form-control" value="<?php echo $result->colonia;?>">
 								</div>
 								<div class="col-sm-6">
 									<label>Código postal <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->codigo_postal;?>">
+									<input name="codigo_postal" type="text" class="form-control" value="<?php echo $result->codigo_postal;?>">
 								</div>
 								</div>
 								<div class="row top-margin">
@@ -85,7 +85,7 @@ require 'modelos/Organizacion.php';
 								</div>
 								<div class="top-margin">
 									<label>Correo electronico <span class="text-danger">*</span></label>
-									<input type="text" class="form-control" value="<?php echo $result->correo_electronico;?>">
+									<input name="correo_electronico" type="text" class="form-control" value="<?php echo $result->correo_electronico;?>">
 								</div>
 								<div class="row top-margin">
 									<div class="col-sm-6">
