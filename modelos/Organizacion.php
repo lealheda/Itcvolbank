@@ -37,7 +37,7 @@ class Organizacion {
 
     public function esNuevo($id) {
         $coneccion = new Database();
-        $result = $coneccion->query("SELECT id FROM organizacion WHERE id = $id");
+        $result = $coneccion->query("SELECT id FROM organizacion WHERE id_usuario = $id");
         $result_object = $result->fetch_object();
         if(is_object($result_object)) {
             return $result_object->id;
