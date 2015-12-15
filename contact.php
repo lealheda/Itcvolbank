@@ -48,7 +48,7 @@
 						<br>
 						<div class="row">
 							<div class="col-sm-6 text-right">
-								<input class="btn btn-action" type="submit" value="Send message">
+								<input class="btn btn-action" type="submit" value="Enviar mensaje">
 							</div>
 						</div>
 					</form>
