@@ -1,24 +1,24 @@
 <?php
 
-require_once '../modelos/Usuario.php';
+require_once '../modelos/Voluntario.php';
 
 class UsuarioEdit {
 
     public function nuevo($data) {
-        $usuario = new Usuario();
+        $usuario = new Voluntario();
         $usuario->nuevo($data);
         $usuario->guardar_nuevo();
     }
 
     public function editar($data) {
-        $usuario = new Usuario();
+        $usuario = new Voluntario();
         $usuario->nuevo($data);
         $usuario_id = $usuario->esNuevo($_SESSION['usuario']['id']);
         $usuario->guardar_editado($usuario_id);
     }
 
     public function editarONuevo($data) {
-        $usuario = new Usuario();
+        $usuario = new Voluntario();
         if ( $usuario->esNuevo($_SESSION['usuario']['id']) ) {
             $this->editar($data);
         } else {
