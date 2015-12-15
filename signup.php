@@ -55,7 +55,7 @@
 									<select name="tipo_usuario" class="form-control">
 									    <option value="1">Voluntario</option>
 									    <option value="2">Organización</option>
-									    <option value="3">Organizador</option>
+									    <!-- <option value="3">Organizador</option> -->
 									</select>
 								</div>
 								<hr>
